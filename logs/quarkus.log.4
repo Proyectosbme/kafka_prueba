@@ -1,0 +1,139 @@
+2025-10-29 16:24:54,397 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] ERROR [io.qua.dep.dev.IsolatedDevModeMain] (vert.x-worker-thread-1) Failed to start quarkus [Error Occurred After Shutdown]: java.lang.RuntimeException: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.resolutions.domain.ports.ITurnoRepository and qualifiers [@Default]
+	- injection target: parameter 'turnoRepository' of com.resolutions.aplicacion.SolicitarTurnoService constructor
+	- declared on CLASS bean [types=[com.resolutions.aplicacion.SolicitarTurnoService, java.lang.Object], qualifiers=[@Any, @Default], target=com.resolutions.aplicacion.SolicitarTurnoService]
+	The following classes match by type, but have been skipped during discovery:
+	- com.resolutions.infraestructura.adapters.out.jpa.TurnoRepositoryImpl has no bean defining annotation (scope, stereotype, etc.)
+
+
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1634)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:342)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:178)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:491)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:732)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:874)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:255)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.resolutions.domain.ports.ITurnoRepository and qualifiers [@Default]
+	- injection target: parameter 'turnoRepository' of com.resolutions.aplicacion.SolicitarTurnoService constructor
+	- declared on CLASS bean [types=[com.resolutions.aplicacion.SolicitarTurnoService, java.lang.Object], qualifiers=[@Any, @Default], target=com.resolutions.aplicacion.SolicitarTurnoService]
+	The following classes match by type, but have been skipped during discovery:
+	- com.resolutions.infraestructura.adapters.out.jpa.TurnoRepositoryImpl has no bean defining annotation (scope, stereotype, etc.)
+
+
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:547)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:692)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:327)
+	... 12 more
+
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.runAugment(AugmentActionImpl.java:376)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.reloadExistingApplication(AugmentActionImpl.java:307)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.reloadExistingApplication(AugmentActionImpl.java:61)
+	at io.quarkus.deployment.dev.IsolatedDevModeMain.restartApp(IsolatedDevModeMain.java:204)
+	at io.quarkus.deployment.dev.IsolatedDevModeMain.restartCallback(IsolatedDevModeMain.java:187)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:555)
+	at io.quarkus.deployment.dev.RuntimeUpdatesProcessor.doScan(RuntimeUpdatesProcessor.java:455)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:163)
+	at io.quarkus.vertx.http.runtime.devmode.VertxHttpHotReplacementSetup$6.call(VertxHttpHotReplacementSetup.java:150)
+	at io.vertx.core.impl.ContextImpl.lambda$executeBlocking$4(ContextImpl.java:192)
+	at io.vertx.core.impl.ContextInternal.dispatch(ContextInternal.java:270)
+	at io.vertx.core.impl.ContextImpl$1.execute(ContextImpl.java:221)
+	at io.vertx.core.impl.WorkerTask.run(WorkerTask.java:56)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at org.jboss.threads.DelegatingRunnable.run(DelegatingRunnable.java:11)
+	at org.jboss.threads.ThreadLocalResettingRunnable.run(ThreadLocalResettingRunnable.java:11)
+	at io.netty.util.concurrent.FastThreadLocalRunnable.run(FastThreadLocalRunnable.java:30)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+Caused by: io.quarkus.builder.BuildException: Build failure: Build failed due to errors
+	[error]: Build step io.quarkus.arc.deployment.ArcProcessor#validate threw an exception: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.resolutions.domain.ports.ITurnoRepository and qualifiers [@Default]
+	- injection target: parameter 'turnoRepository' of com.resolutions.aplicacion.SolicitarTurnoService constructor
+	- declared on CLASS bean [types=[com.resolutions.aplicacion.SolicitarTurnoService, java.lang.Object], qualifiers=[@Any, @Default], target=com.resolutions.aplicacion.SolicitarTurnoService]
+	The following classes match by type, but have been skipped during discovery:
+	- com.resolutions.infraestructura.adapters.out.jpa.TurnoRepositoryImpl has no bean defining annotation (scope, stereotype, etc.)
+
+
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1634)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:342)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:178)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:491)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:732)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:874)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:255)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.resolutions.domain.ports.ITurnoRepository and qualifiers [@Default]
+	- injection target: parameter 'turnoRepository' of com.resolutions.aplicacion.SolicitarTurnoService constructor
+	- declared on CLASS bean [types=[com.resolutions.aplicacion.SolicitarTurnoService, java.lang.Object], qualifiers=[@Any, @Default], target=com.resolutions.aplicacion.SolicitarTurnoService]
+	The following classes match by type, but have been skipped during discovery:
+	- com.resolutions.infraestructura.adapters.out.jpa.TurnoRepositoryImpl has no bean defining annotation (scope, stereotype, etc.)
+
+
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:547)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:692)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:327)
+	... 12 more
+
+	at io.quarkus.builder.Execution.run(Execution.java:139)
+	at io.quarkus.builder.BuildExecutionBuilder.execute(BuildExecutionBuilder.java:78)
+	at io.quarkus.deployment.QuarkusAugmentor.run(QuarkusAugmentor.java:160)
+	at io.quarkus.runner.bootstrap.AugmentActionImpl.runAugment(AugmentActionImpl.java:372)
+	... 21 more
+Caused by: jakarta.enterprise.inject.spi.DeploymentException: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.resolutions.domain.ports.ITurnoRepository and qualifiers [@Default]
+	- injection target: parameter 'turnoRepository' of com.resolutions.aplicacion.SolicitarTurnoService constructor
+	- declared on CLASS bean [types=[com.resolutions.aplicacion.SolicitarTurnoService, java.lang.Object], qualifiers=[@Any, @Default], target=com.resolutions.aplicacion.SolicitarTurnoService]
+	The following classes match by type, but have been skipped during discovery:
+	- com.resolutions.infraestructura.adapters.out.jpa.TurnoRepositoryImpl has no bean defining annotation (scope, stereotype, etc.)
+
+
+	at io.quarkus.arc.processor.BeanDeployment.processErrors(BeanDeployment.java:1634)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:342)
+	at io.quarkus.arc.processor.BeanProcessor.initialize(BeanProcessor.java:178)
+	at io.quarkus.arc.deployment.ArcProcessor.validate(ArcProcessor.java:491)
+	at java.base/java.lang.invoke.MethodHandle.invokeWithArguments(MethodHandle.java:732)
+	at io.quarkus.deployment.ExtensionLoader$3.execute(ExtensionLoader.java:874)
+	at io.quarkus.builder.BuildContext.run(BuildContext.java:255)
+	at org.jboss.threads.ContextHandler$1.runWith(ContextHandler.java:18)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.doRunWith(EnhancedQueueExecutor.java:2651)
+	at org.jboss.threads.EnhancedQueueExecutor$Task.run(EnhancedQueueExecutor.java:2630)
+	at org.jboss.threads.EnhancedQueueExecutor.runThreadBody(EnhancedQueueExecutor.java:1622)
+	at org.jboss.threads.EnhancedQueueExecutor$ThreadBody.run(EnhancedQueueExecutor.java:1589)
+	at java.base/java.lang.Thread.run(Thread.java:842)
+	at org.jboss.threads.JBossThread.run(JBossThread.java:501)
+Caused by: jakarta.enterprise.inject.UnsatisfiedResolutionException: Unsatisfied dependency for type com.resolutions.domain.ports.ITurnoRepository and qualifiers [@Default]
+	- injection target: parameter 'turnoRepository' of com.resolutions.aplicacion.SolicitarTurnoService constructor
+	- declared on CLASS bean [types=[com.resolutions.aplicacion.SolicitarTurnoService, java.lang.Object], qualifiers=[@Any, @Default], target=com.resolutions.aplicacion.SolicitarTurnoService]
+	The following classes match by type, but have been skipped during discovery:
+	- com.resolutions.infraestructura.adapters.out.jpa.TurnoRepositoryImpl has no bean defining annotation (scope, stereotype, etc.)
+
+
+	at io.quarkus.arc.processor.Beans.resolveInjectionPoint(Beans.java:547)
+	at io.quarkus.arc.processor.BeanInfo.init(BeanInfo.java:692)
+	at io.quarkus.arc.processor.BeanDeployment.init(BeanDeployment.java:327)
+	... 12 more
+
+2025-10-29 16:24:54,411 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARN  [io.qua.run.log.LoggingSetupRecorder] (vert.x-worker-thread-1) Log level TRACE for category 'org.acme' set below minimum logging level DEBUG, promoting it to DEBUG. Set the build time configuration property 'quarkus.log.category."org.acme".min-level' to 'TRACE' to avoid this warning
+2025-10-29 16:24:54,411 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] INFO  [io.qua.dep.dev.RuntimeUpdatesProcessor] (vert.x-worker-thread-1) Live reload total time: 3.938s 
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,567 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,568 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
+2025-10-29 16:25:03,568 auxinfo5sta C:\Program Files\Java\jdk-17\bin\java.exe[29812] WARNING [org.aes.rea.ter.imp.AbstractWindowsTerminal] (Quarkus Shutdown Thread) Failed to write out.
