@@ -1,4 +1,4 @@
-package com.resolutions.aplicacion.useCases;
+package com.resolutions.aplicacion.usecases;
 
 import com.resolutions.aplicacion.ports.in.ISolicitarTurno;
 import com.resolutions.domain.model.TurnoModel;

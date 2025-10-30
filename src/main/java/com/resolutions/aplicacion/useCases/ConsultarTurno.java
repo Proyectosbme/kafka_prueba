@@ -1,4 +1,4 @@
-package com.resolutions.aplicacion.useCases;
+package com.resolutions.aplicacion.usecases;
 
 import java.util.List;
 
