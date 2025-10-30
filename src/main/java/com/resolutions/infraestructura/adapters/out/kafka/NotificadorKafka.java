@@ -8,17 +8,17 @@ import com.resolutions.domain.ports.out.INotificadorTurno;
 
 import jakarta.inject.Inject;
 
-public class NotificadorKafka implements INotificadorTurno{
+public class NotificadorKafka implements INotificadorTurno {
+
+    private final Emitter<TurnoModel> emitter;
+
     @Inject
-    @Channel("notificaciones-turno")
-    Emitter<String> emitter;
+    public NotificadorKafka(@Channel("notificaciones-turno") Emitter<TurnoModel> emitter) {
+        this.emitter = emitter;
+    }
 
     @Override
     public void enviarNotificacion(TurnoModel turno) {
-        String mensaje = String.format(
-            "Notificación: %s solicitó el servicio %s para el %s",
-            turno.getCorreo(), turno.getServicio(), turno.getFecha()
-        );
-        emitter.send(mensaje);
+        emitter.send(turno);
     }
 }
