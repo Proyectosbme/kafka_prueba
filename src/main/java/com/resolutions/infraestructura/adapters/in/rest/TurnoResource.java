@@ -10,6 +10,7 @@ import com.resolutions.domain.model.TurnoModel;
 import com.resolutions.infraestructura.adapters.in.rest.dto.TurnoRequestDTO;
 import com.resolutions.infraestructura.adapters.in.rest.mappers.TurnoRequestMapper;
 
+import jakarta.annotation.security.RolesAllowed;
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
 import jakarta.ws.rs.Consumes;
@@ -38,6 +39,7 @@ public class TurnoResource {
 
     @POST
     @Path("/recibirTurno")
+    @RolesAllowed("admin")
     public void solicitarTurno(TurnoRequestDTO request) {
         try {
             LOG.infof("Recibiendo solicitud de turno: usuario=%s, servicio=%s, fecha=%s, correo=%s",
@@ -56,6 +58,7 @@ public class TurnoResource {
 
     @GET
     @Path("/consultar")
+    @RolesAllowed("user")
     public List<TurnoModel> consultarTurnos() {
         try {
             LOG.info("Ingresando en la consulta");
