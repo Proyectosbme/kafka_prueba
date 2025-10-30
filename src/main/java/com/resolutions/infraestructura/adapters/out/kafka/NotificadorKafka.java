@@ -4,7 +4,7 @@ import org.eclipse.microprofile.reactive.messaging.Channel;
 import org.eclipse.microprofile.reactive.messaging.Emitter;
 
 import com.resolutions.domain.model.TurnoModel;
-import com.resolutions.domain.ports.INotificadorTurno;
+import com.resolutions.domain.ports.out.INotificadorTurno;
 
 import jakarta.inject.Inject;
 

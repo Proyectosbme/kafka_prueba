@@ -1,4 +1,4 @@
-package com.resolutions.domain.ports;
+package com.resolutions.domain.ports.out;
 
 import java.util.List;
 

@@ -3,7 +3,7 @@ package com.resolutions.infraestructura.adapters.out.jpa;
 import java.util.List;
 
 import com.resolutions.domain.model.TurnoModel;
-import com.resolutions.domain.ports.IDataPersist;
+import com.resolutions.domain.ports.out.IDataPersist;
 import com.resolutions.infraestructura.adapters.out.jpa.entidades.Turno;
 import com.resolutions.infraestructura.adapters.out.jpa.mappers.TurnoMappers;
 

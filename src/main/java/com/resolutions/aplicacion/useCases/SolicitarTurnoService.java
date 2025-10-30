@@ -2,8 +2,8 @@ package com.resolutions.aplicacion.useCases;
 
 import com.resolutions.aplicacion.ports.in.ISolicitarTurno;
 import com.resolutions.domain.model.TurnoModel;
-import com.resolutions.domain.ports.IDataPersist;
-import com.resolutions.domain.ports.INotificadorTurno;
+import com.resolutions.domain.ports.out.IDataPersist;
+import com.resolutions.domain.ports.out.INotificadorTurno;
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;
