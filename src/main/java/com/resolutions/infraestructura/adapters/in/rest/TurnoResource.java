@@ -58,7 +58,7 @@ public class TurnoResource {
 
     @GET
     @Path("/consultar")
-    @RolesAllowed("user")
+    @RolesAllowed({"user", "admin"})
     public List<TurnoModel> consultarTurnos() {
         try {
             LOG.info("Ingresando en la consulta");
