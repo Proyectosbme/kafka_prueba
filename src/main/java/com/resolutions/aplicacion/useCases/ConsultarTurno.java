@@ -3,8 +3,9 @@ package com.resolutions.aplicacion.usecases;
 import java.util.List;
 
 import com.resolutions.aplicacion.ports.in.IConsultarTurno;
+import com.resolutions.aplicacion.ports.out.IDataPersist;
 import com.resolutions.domain.model.TurnoModel;
-import com.resolutions.domain.ports.out.IDataPersist;
+
 
 import jakarta.enterprise.context.ApplicationScoped;
 import jakarta.inject.Inject;

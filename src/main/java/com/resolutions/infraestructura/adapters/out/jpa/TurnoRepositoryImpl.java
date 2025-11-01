@@ -2,8 +2,8 @@ package com.resolutions.infraestructura.adapters.out.jpa;
 
 import java.util.List;
 
+import com.resolutions.aplicacion.ports.out.IDataPersist;
 import com.resolutions.domain.model.TurnoModel;
-import com.resolutions.domain.ports.out.IDataPersist;
 import com.resolutions.infraestructura.adapters.out.jpa.entidades.Turno;
 import com.resolutions.infraestructura.adapters.out.jpa.mappers.TurnoMappers;
 
@@ -14,18 +14,17 @@ import jakarta.transaction.Transactional;
 @ApplicationScoped
 public class TurnoRepositoryImpl implements IDataPersist<TurnoModel> {
 
-    @Inject
-    TurnoPanacheRepository panacheRepository;
+    private final TurnoPanacheRepository panacheRepository;  
+    private final TurnoMappers mapper;
 
+    
     @Inject
-    TurnoMappers mapper;
-
-    @Override
-    @Transactional
-    public void guardar(TurnoModel turnoDominio) {
-        Turno entity = mapper.toEntity(turnoDominio);
-        panacheRepository.persist(entity);
+    public TurnoRepositoryImpl(TurnoPanacheRepository panacheRepository, TurnoMappers mapper) {
+        this.panacheRepository = panacheRepository;
+        this.mapper = mapper;
     }
+
+  
 
     @Override
     @Transactional
@@ -54,5 +53,18 @@ public class TurnoRepositoryImpl implements IDataPersist<TurnoModel> {
                 .map(mapper::toModel)
                 .toList();
     }
+
+   @Override
+    public long count() {
+        return panacheRepository.count();
+    }
+
+   @Override
+   public TurnoModel guardar(TurnoModel dto) {
+        Turno entity = mapper.toEntity(dto);
+        panacheRepository.persist(entity);
+        dto = mapper.toModel(entity);
+        return dto;
+   }  
 
 }

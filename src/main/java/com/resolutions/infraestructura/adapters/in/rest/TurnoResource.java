@@ -28,14 +28,19 @@ public class TurnoResource {
 
     private static final Logger LOG = Logger.getLogger(TurnoResource.class);
 
-    @Inject
-    ISolicitarTurno solicitarTurno;
+ 
+    private final ISolicitarTurno solicitarTurno;
+    private final TurnoRequestMapper requestMapper;
+    private final IConsultarTurno consultarTurno;
 
+    
     @Inject
-    TurnoRequestMapper requestMapper;
-
-    @Inject
-    IConsultarTurno consultarTurno;
+    public TurnoResource(ISolicitarTurno solicitarTurno, TurnoRequestMapper requestMapper,
+            IConsultarTurno consultarTurno) {
+        this.solicitarTurno = solicitarTurno;
+        this.requestMapper = requestMapper;
+        this.consultarTurno = consultarTurno;
+    }
 
     @POST
     @Path("/recibirTurno")
@@ -43,7 +48,7 @@ public class TurnoResource {
     public void solicitarTurno(TurnoRequestDTO request) {
         try {
             LOG.infof("Recibiendo solicitud de turno: usuario=%s, servicio=%s, fecha=%s, correo=%s",
-                    request.usuario, request.servicio, request.correo);
+                    request.getEstado(), request.getServicio(), request.getCorreo());
 
             TurnoModel turno = requestMapper.toModel(request);
 

@@ -1,34 +1,66 @@
 package com.resolutions.domain.model;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 public class TurnoModel {
-
-    private final String usuario;
+   private final Long id;
+    private String codigo;
+    private final LocalDateTime fechaCreacion;
+    private final String estado;
     private final String servicio;
-    private final LocalDate fecha;
-    private final String correo;
+    private final String subServicio;
+    private final LocalDateTime horaLlamado;
+    private final LocalDateTime horaAtendido;
 
-    public TurnoModel(String usuario, String servicio, LocalDate fecha, String correo) {
-        this.usuario = usuario;
+    
+    
+
+    public TurnoModel(Long id, String codigo, LocalDateTime fechaCreacion, String estado, String servicio,
+            String subServicio, LocalDateTime horaLlamado, LocalDateTime horaAtendido) {
+        this.id = id;
+        this.codigo = codigo;
+        this.fechaCreacion = fechaCreacion;
+        this.estado = estado;
         this.servicio = servicio;
-        this.fecha = fecha;
-        this.correo = correo;
+        this.subServicio = subServicio;
+        this.horaLlamado = horaLlamado;
+        this.horaAtendido = horaAtendido;
     }
 
-    public String getUsuario() {
-        return usuario;
+    public LocalDateTime getFechaCreacion() {
+        return fechaCreacion;
+    }
+
+    public String getEstado() {
+        return estado;
     }
 
     public String getServicio() {
         return servicio;
     }
 
-    public LocalDate getFecha() {
-        return fecha;
+    public String getSubServicio() {
+        return subServicio;
     }
 
-    public String getCorreo() {
-        return correo;
+    public LocalDateTime getHoraLlamado() {
+        return horaLlamado;
+    }
+
+    public LocalDateTime getHoraAtendido() {
+        return horaAtendido;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public Long getId() {
+        return id;
     }
 }

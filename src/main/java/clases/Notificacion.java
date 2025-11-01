@@ -11,14 +11,17 @@ import jakarta.inject.Inject;
 @ApplicationScoped
 public class Notificacion {
 
+    private final Emitter<String> notificacionEmitter;
+
     @Inject
-    @Channel("notificaciones-turno")
-    Emitter<String> notificacionEmitter;
+    public Notificacion(@Channel("notificaciones-turno") Emitter<String> notificacionEmitter) {
+        this.notificacionEmitter = notificacionEmitter;
+    }
 
     public void enviarNotificacionKafka(Turno turno) {
         String mensaje = String.format(
                 "Notificación: %s se ha enviado la notificación por el turno solicitado para el %s",
-                turno.correo, turno.fecha);
+                turno.getCodigo(), turno.getEstado());
 
         notificacionEmitter.send(mensaje);
     }

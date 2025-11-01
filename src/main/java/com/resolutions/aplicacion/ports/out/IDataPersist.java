@@ -3,7 +3,7 @@ package com.resolutions.aplicacion.ports.out;
 import java.util.List;
 
 public interface IDataPersist<T> {
-    void guardar(T dto);
+    T guardar(T dto);
 
     void update(T dto);
 
@@ -12,4 +12,6 @@ public interface IDataPersist<T> {
     T get(String cod);
 
     List<T> getAll();
+
+    long count();
 }
