@@ -5,8 +5,8 @@ import java.util.List;
 import org.jboss.logging.Logger;
 
 import com.resolutions.aplicacion.ports.in.IConsultarTurno;
-import com.resolutions.aplicacion.ports.in.ISolicitarTurno;
 import com.resolutions.domain.model.TurnoModel;
+import com.resolutions.domain.ports.out.ISolicitarTurno;
 import com.resolutions.infraestructura.adapters.in.rest.dto.TurnoRequestDTO;
 import com.resolutions.infraestructura.adapters.in.rest.mappers.TurnoRequestMapper;
 

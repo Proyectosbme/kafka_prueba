@@ -1,6 +1,4 @@
 package com.resolutions.domain.model;
-
-import java.time.LocalDate;
 import java.time.LocalDateTime;
 
 public class TurnoModel {
@@ -11,10 +9,7 @@ public class TurnoModel {
     private final String servicio;
     private final String subServicio;
     private final LocalDateTime horaLlamado;
-    private final LocalDateTime horaAtendido;
-
-    
-    
+    private final LocalDateTime horaAtendido;   
 
     public TurnoModel(Long id, String codigo, LocalDateTime fechaCreacion, String estado, String servicio,
             String subServicio, LocalDateTime horaLlamado, LocalDateTime horaAtendido) {

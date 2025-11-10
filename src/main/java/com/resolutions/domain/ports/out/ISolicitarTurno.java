@@ -1,4 +1,4 @@
-package com.resolutions.aplicacion.ports.in;
+package com.resolutions.domain.ports.out;
 
 import com.resolutions.domain.model.TurnoModel;
 
